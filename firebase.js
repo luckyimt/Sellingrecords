@@ -1,20 +1,17 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
+
+// Your config
 const firebaseConfig = {
-    apiKey: "YOUR_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID"
+  apiKey: "AIzaSyBvIRQOFXY3NCBB-60fgI8Kh_19LIo2lt8",
+  authDomain: "store-86724.firebaseapp.com",
+  projectId: "store-86724"
 };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+// Initialize
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-function sendToCloud(record){
 
-    db.collection("sales").add(record)
-    .then(() => {
-        alert("Saved to cloud!");
-    })
-    .catch(err => {
-        console.error(err);
-    });
-
-}
+export { db };
