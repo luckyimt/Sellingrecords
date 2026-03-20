@@ -68,6 +68,9 @@ window.db = db;
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
+
+</script>
+<script>
 async function sendToCloud(record){
 
     try {
@@ -86,7 +89,7 @@ async function sendToCloud(record){
 let products = [];
 
 // Load JSON
-fetch('products.json')
+fetch('./products.json')
 .then(res => res.json())
 .then(data => {
     products = data.products;
